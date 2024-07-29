@@ -132,7 +132,7 @@ def main():
             if submit_button:
                 if authenticate(username, password):
                     st.session_state.logged_in = True
-                    st.experimental_rerun()
+                    st.rerun()  # Use st.rerun() instead of st.experimental_rerun()
                 else:
                     st.error("Invalid username or password")
         return
@@ -184,7 +184,7 @@ def main():
     if st.sidebar.button("Logout"):
         st.session_state.logged_in = False
         st.session_state.results = None
-        st.experimental_rerun()
+        st.rerun()  # Use st.rerun() instead of st.experimental_rerun()
 
 if __name__ == "__main__":
     main()
